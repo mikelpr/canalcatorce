@@ -1,0 +1,4 @@
+<resources>
+
+    <style name="Theme.CanalCatorce" parent="@style/Theme.Leanback" />
+</resources>
