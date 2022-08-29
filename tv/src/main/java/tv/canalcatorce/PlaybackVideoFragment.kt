@@ -13,7 +13,7 @@ import androidx.leanback.widget.PlaybackControlsRow
 class PlaybackVideoFragment : VideoSupportFragment() {
 
     companion object {
-        val streamUrl14 = Uri.parse("https://60ed5b6d0df78.streamlock.net:1936/segundo/segundo/chunklist_w1744854074.m3u8")
+        val streamUrl14: Uri = Uri.parse("https://60ed5b6d0df78.streamlock.net:1936/segundo/segundo/chunklist_w1744854074.m3u8")
     }
     private lateinit var mTransportControlGlue: PlaybackTransportControlGlue<MediaPlayerAdapter>
 
@@ -35,12 +35,13 @@ class PlaybackVideoFragment : VideoSupportFragment() {
         playerAdapter.setRepeatAction(PlaybackControlsRow.RepeatAction.INDEX_NONE)
 
         mTransportControlGlue = PlaybackTransportControlGlue(activity, playerAdapter)
+        mTransportControlGlue.isControlsOverlayAutoHideEnabled = true
         mTransportControlGlue.host = glueHost
         //mTransportControlGlue.title = meta.title
         //mTransportControlGlue.subtitle = meta.description
         mTransportControlGlue.art = ResourcesCompat.getDrawable(resources, R.drawable.ic_14, null)
         mTransportControlGlue.playWhenPrepared()
-        playerAdapter.setProgressUpdatingEnabled(false)
+        //playerAdapter.setProgressUpdatingEnabled(false)
         playerAdapter.setDataSource(streamUrl14)
     }
 
