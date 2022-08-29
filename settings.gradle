@@ -13,5 +13,5 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "Canal Catorce"
-include ':mobile'
+// include ':mobile'
 include ':tv'
